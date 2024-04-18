@@ -1,4 +1,4 @@
-import { User } from "../../entity/User";
+import { User } from "../../entity/concretes/User";
 
 export interface UserService {
     getAllUsers(): Promise<User[]>;

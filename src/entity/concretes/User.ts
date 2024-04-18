@@ -1,5 +1,6 @@
-import { Entity, Column } from "typeorm"
-import { BaseEntity } from "./BaseEntity"
+import { Entity, Column, OneToMany, JoinTable } from "typeorm"
+import { BaseEntity } from "../abstracts/BaseEntity"
+import { Role } from "./Role"
 
 @Entity()
 export class User extends BaseEntity{
@@ -19,4 +20,7 @@ export class User extends BaseEntity{
     @Column()
     dateOfBirth: Date
 
+    @OneToMany(() => Role, role => role.user)
+    @JoinTable()
+    roles: Role[];
 }

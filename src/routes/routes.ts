@@ -1,3 +1,4 @@
+import { RoleController } from "../controller/RoleController"
 import { UserController } from "../controller/UserController"
 
 export const Routes = [{
@@ -24,5 +25,30 @@ export const Routes = [{
     method: "delete",
     route: "/users/:id",
     controller: UserController,
+    action: "remove"
+}, {
+    method: "get",
+    route: "/roles/getAll",
+    controller: RoleController,
+    action: "all"
+}, {
+    method: "get",
+    route: "/roles/:id",
+    controller: RoleController,
+    action: "one"
+}, {
+    method: "post",
+    route: "/roles/add",
+    controller: RoleController,
+    action: "save"
+}, {
+    method: "put",
+    route: "/roles/:id",
+    controller: RoleController,
+    action: "update"
+}, {
+    method: "delete",
+    route: "/roles/:id",
+    controller: RoleController,
     action: "remove"
 }]
